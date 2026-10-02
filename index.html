@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bài thực hành Array + Object, JSON</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap"><h1>Bài tập kết hợp Array + Object, JSON</h1><p>Bài 10 – 13 · dữ liệu mở rộng (≥ 10 mục mỗi danh sách)</p></div></header>
+<div class="wrap">
+<nav>
+  <button class="active" data-tab="t10">Bài 10 · Sinh viên</button>
+  <button data-tab="t11">Bài 11 · Sản phẩm</button>
+  <button data-tab="t12">Bài 12 · JSON cơ bản</button>
+  <button data-tab="t13">Bài 13 · products.json</button>
+</nav>
+
+<section id="t10" class="active"><div class="card">
+  <h2>Bài 10 — Danh sách sinh viên</h2><p class="sub">12 sinh viên, 5 ngành.</p>
+  <div class="controls">
+    <button class="act" id="b10-list">Hiển thị danh sách</button>
+    <input id="b10-id" value="SV02" size="6"><button class="act" id="b10-find">Tìm theo id</button>
+    <select id="b10-major"></select><button class="act" id="b10-filter-major">Lọc theo ngành</button>
+    <label>Điểm ≥</label><input type="number" id="b10-score" value="8" step="0.1" min="0" max="10"><button class="act" id="b10-filter-score">Lọc theo điểm</button>
+  </div>
+  <div class="controls">
+    <button class="act alt" id="b10-avg">Điểm trung bình</button>
+    <button class="act alt" id="b10-top">Điểm cao nhất</button>
+    <button class="act alt" id="b10-sort">Sắp xếp điểm giảm dần</button>
+  </div>
+  <div class="result" id="r10"></div>
+</div></section>
+
+<section id="t11"><div class="card">
+  <h2>Bài 11 — Quản lý sản phẩm (xe)</h2><p class="sub">14 sản phẩm. Giá chỉ mang tính minh hoạ.</p>
+  <div class="controls">
+    <button class="act alt" id="b11-all">Tất cả</button>
+    <input id="b11-name" placeholder="Tên xe, ví dụ: vf"><button class="act" id="b11-search">Tìm theo tên</button>
+    <select id="b11-brand"><option value="" disabled selected>Thương hiệu…</option></select>
+    <select id="b11-cat"><option value="" disabled selected>Loại xe…</option></select>
+  </div>
+  <div class="controls">
+    <label>Giá từ (triệu)</label><input type="number" id="b11-min" value="500"><label>đến</label><input type="number" id="b11-max" value="1000">
+    <button class="act" id="b11-price">Lọc khoảng giá</button>
+  </div>
+  <div class="controls">
+    <button class="act alt" id="b11-asc">Giá tăng dần</button><button class="act alt" id="b11-desc">Giá giảm dần</button>
+    <button class="act alt" id="b11-cheap">Rẻ nhất</button><button class="act alt" id="b11-pricey">Đắt nhất</button>
+  </div>
+  <div class="result" id="r11"></div>
+</div></section>
+
+<section id="t12">
+  <div class="card"><h2>Bài 12 — JSON cơ bản</h2><p class="sub">JSON.parse() và JSON.stringify() với 1 sinh viên.</p>
+    <div class="controls"><label>Score mới</label><input type="number" id="b12-score" value="9.5" step="0.1" min="0" max="10">
+      <button class="act" id="b12-change">Thay đổi score</button><button class="act alt" id="b12-reset">Đặt lại</button></div>
+    <div class="result" id="r12"></div></div>
+  <div class="card"><h2>Mở rộng — mảng JSON 10 sinh viên</h2><p class="sub">Parse chuỗi JSON dạng mảng rồi xử lý như mảng object thông thường.</p>
+    <div class="result" id="r12b"></div></div>
+</section>
+
+<section id="t13"><div class="card">
+  <h2>Bài 13 — Danh sách sản phẩm từ products.json</h2><p class="sub">Dùng fetch("products.json") rồi hiển thị lên HTML.</p>
+  <div class="result" id="r13">Đang tải…</div>
+</div></section>
+</div>
+<footer>Mở bằng Live Server (VS Code) để fetch("products.json") hoạt động.</footer>
+<script src="script.js"></script>
+</body>
+</html>
